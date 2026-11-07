@@ -8,3 +8,7 @@ node_modules/**
 .editorconfig
 CONTRIBUTING.md
 package-lock.json
+.claude/**
+CLAUDE.md
+CLAUDE.local.md
+.remember/**
