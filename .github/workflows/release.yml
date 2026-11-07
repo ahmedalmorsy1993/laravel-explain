@@ -27,7 +27,9 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Publish to Open VSX
-        run: npx ovsx publish *.vsix
+        run: |
+          npx ovsx create-namespace "$(node -p "require('./package.json').publisher")" || echo "Namespace already exists"
+          npx ovsx publish *.vsix
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
       - name: GitHub release
