@@ -1,0 +1,21 @@
+name: Request an explanation
+description: A Laravel method, helper, rule or Blade directive that has no hover yet
+labels: ['new entry']
+body:
+  - type: input
+    id: name
+    attributes:
+      label: What should be explained?
+      placeholder: e.g. Str::markdown, ->withAvg(), 'prohibited' rule, @livewire
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: Example code where you hovered it
+      render: php
+  - type: textarea
+    id: explanation
+    attributes:
+      label: Suggested explanation (optional)
+      description: Plain English, one or two sentences. Or send a pull request — see CONTRIBUTING.md.

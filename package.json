@@ -1,0 +1,77 @@
+{
+  "name": "laravel-explain",
+  "displayName": "Laravel Explain",
+  "description": "Hover any Laravel method, helper, validation rule or Blade directive to get a plain-English explanation, an example and a link to the right docs version.",
+  "version": "1.0.0",
+  "publisher": "ahmedismail",
+  "author": "Ahmed Ismail",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#C92B2A",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmedalmorsy1993/laravel-explain"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmedalmorsy1993/laravel-explain/issues"
+  },
+  "homepage": "https://github.com/ahmedalmorsy1993/laravel-explain#readme",
+  "keywords": [
+    "laravel",
+    "php",
+    "eloquent",
+    "blade",
+    "hover",
+    "documentation",
+    "reference",
+    "validation",
+    "migrations",
+    "learning"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Education",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:php",
+    "onLanguage:blade"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "laravelExplain.search",
+        "title": "Search Laravel reference",
+        "category": "Laravel Explain"
+      }
+    ],
+    "configuration": {
+      "title": "Laravel Explain",
+      "properties": {
+        "laravelExplain.docsVersion": {
+          "type": "string",
+          "default": "auto",
+          "markdownDescription": "Laravel docs version for the **Docs** links. `auto` reads `laravel/framework` from the project's `composer.lock` (falls back to `13.x`). Or set a fixed version such as `12.x` or `master`."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "check-links": "node scripts/check-links.js",
+    "package": "vsce package",
+    "publish:vscode": "vsce publish",
+    "publish:openvsx": "ovsx publish"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.2.2",
+    "ovsx": "^0.10.1"
+  }
+}

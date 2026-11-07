@@ -1,0 +1,27 @@
+name: Wrong or unclear explanation / bug
+description: An explanation is wrong, confusing, outdated, or the hover shows up in the wrong place
+labels: ['bug']
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Which entry?
+      placeholder: e.g. whereHas, Route::get, rule:unique, @foreach
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: The code line you hovered
+      render: php
+  - type: input
+    id: versions
+    attributes:
+      label: Laravel and VS Code versions
+      placeholder: Laravel 13.2, VS Code 1.105
